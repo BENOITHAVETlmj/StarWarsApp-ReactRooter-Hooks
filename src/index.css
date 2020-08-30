@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(221, 255, 255);
+  background-color: black;
+  color: white;
   text-align: center;
 }
 
@@ -18,68 +19,29 @@ code {
   display: flex;
   flex-direction: column;
 }
-header {
-  background-color: rgb(190, 248, 248);
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: yellow;
+  color: black;
+  border: 10px solid black;
   font-weight: bold;
   font-size: 20px;
-  width: 100vw;
-  height: 10vh;
   padding: 10px;
-  text-align: center;
-  padding-top: 20px;
-  margin-bottom: 20px;
+  min-width: 10vh;
 }
-.header div {
-  color: rgb(106, 175, 160);
-  padding-top: 10px;
-}
-.search {
-  width: 400px;
-  height: 30px;
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  width: 50vw;
+  text-decoration: none;
 }
 
 li {
-  list-style: none;
-  height: 30px;
-  margin: auto;
-  color: rgb(74, 168, 156);
-}
-
-input:focus {
-  margin: auto;
-  outline: none;
-  width: 300px;
-  background-color: rgb(255, 245, 231);
-}
-input {
-  margin: auto;
-}
-.countryPage {
-  margin: auto;
-  padding: 10px 0px;
-  margin-top: 20px;
-  border: 2px solid rgb(216, 216, 216);
-  border-radius: 5px;
-  width: 350px;
-  height: 100px;
-}
-.flag {
-  width: 50px;
-  height: 30px;
-}
-
-.flag1 {
-  width: 250px;
-  height: 130px;
-}
-
-a {
-  color: rgb(182, 182, 182);
-  text-decoration: none;
-}
-h2 {
-  margin-bottom: 10px;
-}
-.country {
-  padding: 0px;
+  color: black;
+  color: black;
 }
