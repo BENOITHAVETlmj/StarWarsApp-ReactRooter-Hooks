@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import Shop from "./Shop";
 import Home from "./Home";
 import About from "./About";
+import ItemDetails from "./ItemDetails";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/About" component={About} />
-          <Route path="/Shop" component={Shop} />
+          <Route path="/Shop" exact component={Shop} />
+          <Route path="/Shop/:id" component={ItemDetails} />
         </Switch>
       </div>
     </Router>
