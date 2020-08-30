@@ -1,4 +1,4 @@
-LINKS for testing the App  ---->     https://filter-router.herokuapp.com/
+LINKS for testing the App  ---->     http://filter-router.herokuapp.com/
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
