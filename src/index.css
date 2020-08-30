@@ -45,3 +45,8 @@ li {
   color: black;
   color: black;
 }
+
+.about {
+  padding: 50px;
+  border: 1px solid white;
+}

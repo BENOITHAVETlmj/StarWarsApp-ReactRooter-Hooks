@@ -5,6 +5,7 @@ import Shop from "./Shop";
 import Home from "./Home";
 import About from "./About";
 import ItemDetails from "./ItemDetails";
+import Vehicles from "./Vehicles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/About" component={About} />
           <Route path="/Shop" exact component={Shop} />
           <Route path="/Shop/:id" component={ItemDetails} />
+          <Route path="/vehicles" exact component={Vehicles} />
         </Switch>
       </div>
     </Router>
