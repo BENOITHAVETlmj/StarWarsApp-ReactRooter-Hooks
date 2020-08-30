@@ -10,7 +10,7 @@ function Shop() {
   }, []);
 
   const fetchItems = async () => {
-    const data = await fetch("https://swapi.dev/api/people");
+    const data = await fetch("http://swapi.dev/api/people");
 
     const characters = await data.json();
     setCharacters(characters.results);

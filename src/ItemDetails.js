@@ -11,7 +11,7 @@ function Shop({ match }) {
 
   const fetchItem = async () => {
     const fetchItem = await fetch(
-      `https://swapi.dev/api/people/${match.params.id}`
+      `http://swapi.dev/api/people/${match.params.id}`
     );
     const item = await fetchItem.json();
     setCharacter(item);
