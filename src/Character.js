@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
-import { Link } from "react-router-dom";
+import Vehicle from "./Vehicle";
 
-function Shop({ match }) {
+function Character({ match }) {
   const [character, setCharacter] = useState({ films: [], vehicles: [] });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -14,19 +14,23 @@ function Shop({ match }) {
   `;
 
   useEffect(() => {
-    fetchItem();
+    fetchCharacter();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const fetchItem = async () => {
+  const fetchCharacter = async () => {
     setIsLoading(true);
-    const fetchItem = await fetch(
+    const fetchCharacter = await fetch(
       `http://swapi.dev/api/people/${match.params.id}`
     );
-    const item = await fetchItem.json();
+    const item = await fetchCharacter.json();
     setCharacter(item);
     setIsLoading(false);
   };
+
+  const vehicles = React.useMemo(() => character.vehicles, [
+    character.vehicles,
+  ]);
 
   return isLoading ? (
     <ClipLoader css={override} size={250} color={"yellow"} />
@@ -36,14 +40,15 @@ function Shop({ match }) {
       <h3>{character.birth_year}</h3>
       <h3>{character.gender}</h3>
       <h3>{character.height}</h3>
+      <h3>{character.mass}</h3>
       <h3>{character.hair_color}</h3>
-      {character.vehicles.length > 0 && (
-        <Link to="/vehicles">
-          <button>Vehicles</button>
-        </Link>
-      )}
+      {vehicles &&
+        vehicles.length > 0 &&
+        vehicles.map((vehicle, index) => (
+          <Vehicle key={index} vehicle={vehicle} />
+        ))}
     </div>
   );
 }
 
-export default Shop;
+export default Character;

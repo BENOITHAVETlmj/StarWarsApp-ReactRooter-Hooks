@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
 
-function Shop() {
+function Characters() {
   const [characters, setCharacters] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -35,7 +35,7 @@ function Shop() {
       ) : (
         characters.map((character, index) => (
           <h1 key={character.name}>
-            <Link to={`/shop/${index + 1}`}>{character.name}</Link>
+            <Link to={`/Character/${index + 1}`}>{character.name}</Link>
           </h1>
         ))
       )}
@@ -43,4 +43,4 @@ function Shop() {
   );
 }
 
-export default Shop;
+export default Characters;
