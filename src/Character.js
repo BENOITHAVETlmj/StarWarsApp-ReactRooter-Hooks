@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
-import Vehicle from "./Vehicle";
+import { Link } from "react-router-dom";
 
 function Character({ match }) {
   const [character, setCharacter] = useState({ films: [], vehicles: [] });
@@ -32,20 +32,35 @@ function Character({ match }) {
     character.vehicles,
   ]);
 
+  function getLastNumber(url) {
+    var matches = url.match(/\d+/g);
+    return matches[matches.length - 1];
+  }
+
+  console.log(vehicles);
+
   return isLoading ? (
     <ClipLoader css={override} size={250} color={"yellow"} />
   ) : (
     <div>
-      <h1>{character.name}</h1>
-      <h3>{character.birth_year}</h3>
-      <h3>{character.gender}</h3>
-      <h3>{character.height}</h3>
-      <h3>{character.mass}</h3>
-      <h3>{character.hair_color}</h3>
+      <h1 id="characterDetails">{character.name}</h1>
+      <h3 id="characterDetails">{character.birth_year}</h3>
+      <h3 id="characterDetails">{character.gender}</h3>
+      <h3 id="characterDetails">{character.height}</h3>
+      <h3 id="characterDetails">{character.mass}</h3>
+      <h3 id="characterDetails">{character.hair_color}</h3>
       {vehicles &&
         vehicles.length > 0 &&
         vehicles.map((vehicle, index) => (
-          <Vehicle key={index} vehicle={vehicle} />
+          <h1 key={vehicle}>
+            <Link
+              to={`/Character/${match.params.id}/vehicle/${getLastNumber(
+                vehicle
+              )}`}
+            >
+              Vehicule {index + 1}
+            </Link>
+          </h1>
         ))}
     </div>
   );

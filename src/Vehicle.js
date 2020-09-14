@@ -1,35 +1,53 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import "./index.css";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
-import "./index.css";
 
-const override = css`
-  display: block;
-  margin: 20px auto;
-`;
-
-function Vehicle({ vehicle }) {
+function Vehicle({ match }) {
+  const [vehicle, setVehicle] = useState();
   const [isLoading, setIsLoading] = useState(false);
-  const [item, setItem] = useState();
+
+  const override = css`
+    display: block;
+    margin: 20px auto;
+  `;
+
   useEffect(() => {
+    console.log(match);
     fetchVehicle();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchVehicle = async () => {
     setIsLoading(true);
-    const fetchVehicle = await fetch(`${vehicle}`);
+    const fetchVehicle = await fetch(
+      `http://swapi.dev/api/vehicles/${match.params.id}`
+    );
     const item = await fetchVehicle.json();
-    setItem(item);
+    setVehicle(item);
     setIsLoading(false);
+    console.log(item);
   };
-
-  console.log(item);
 
   return isLoading ? (
     <ClipLoader css={override} size={250} color={"yellow"} />
   ) : (
-    item !== undefined && <div>{item.name}</div>
+    <div className="vehicule">
+      <ul>
+        <li>Name: {vehicle && vehicle.name}</li>
+        <li>Created in: {vehicle && Date(vehicle.created)}</li>
+        <li>Model:{vehicle && vehicle.model}</li>
+        <li>Manufacturer: {vehicle && vehicle.manufacturer}</li>
+        <li>
+          Pilots:{" "}
+          {vehicle &&
+            vehicle.pilots.length > 0 &&
+            vehicle.pilots.map((pilot, index) => (
+              <div key={index}>{pilot}</div>
+            ))}
+        </li>
+      </ul>
+    </div>
   );
 }
 

@@ -43,10 +43,37 @@ nav {
 
 li {
   color: black;
-  color: black;
+  list-style: none;
 }
 
 .about {
   padding: 50px;
   border: 1px solid white;
+}
+
+.vehicle {
+  text-align: start;
+  margin: 20px 100px;
+  border: 2px solid yellow;
+  padding: 5px;
+  border-radius: 5px;
+}
+.vehicle:hover {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+}
+
+#characterDetails:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.vehicule {
+  border: 1px solid yellow;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: yellow;
+  margin: 10px 80px;
+  padding: 10px;
 }
