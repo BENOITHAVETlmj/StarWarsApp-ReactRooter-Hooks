@@ -33,6 +33,7 @@ function Characters() {
       {isLoading ? (
         <ClipLoader css={override} size={250} color={"yellow"} />
       ) : (
+        characters &&
         characters.map((character, index) => (
           <h1 key={character.name}>
             <Link to={`/Character/${index + 1}`}>{character.name}</Link>

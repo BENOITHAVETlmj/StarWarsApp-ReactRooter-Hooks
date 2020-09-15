@@ -26,18 +26,18 @@ function Character({ match }) {
     const item = await fetchCharacter.json();
     setCharacter(item);
     setIsLoading(false);
+    console.log(item);
   };
 
   const vehicles = React.useMemo(() => character.vehicles, [
     character.vehicles,
   ]);
 
+  //getting last number of the url link to get id matching params endpoint
   function getLastNumber(url) {
     var matches = url.match(/\d+/g);
     return matches[matches.length - 1];
   }
-
-  console.log(vehicles);
 
   return isLoading ? (
     <ClipLoader css={override} size={250} color={"yellow"} />
@@ -52,13 +52,13 @@ function Character({ match }) {
       {vehicles &&
         vehicles.length > 0 &&
         vehicles.map((vehicle, index) => (
-          <h1 key={vehicle}>
+          <h1 key={index}>
             <Link
               to={`/Character/${match.params.id}/vehicle/${getLastNumber(
                 vehicle
               )}`}
             >
-              Vehicule {index + 1}
+              {vehicle && vehicle}
             </Link>
           </h1>
         ))}
