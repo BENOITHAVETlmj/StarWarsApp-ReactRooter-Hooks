@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 function Character({ match }) {
   const [character, setCharacter] = useState({ films: [], vehicles: [] });
   const [isLoading, setIsLoading] = useState(false);
-
   const override = css`
     display: block;
     margin: 20px auto;
@@ -26,10 +25,9 @@ function Character({ match }) {
     const item = await fetchCharacter.json();
     setCharacter(item);
     setIsLoading(false);
-    console.log(item);
   };
 
-  const vehicles = React.useMemo(() => character.vehicles, [
+  const vehiclesArray = React.useMemo(() => character.vehicles, [
     character.vehicles,
   ]);
 
@@ -43,15 +41,15 @@ function Character({ match }) {
     <ClipLoader css={override} size={250} color={"yellow"} />
   ) : (
     <div>
-      <h1 id="characterDetails">{character.name}</h1>
-      <h3 id="characterDetails">{character.birth_year}</h3>
-      <h3 id="characterDetails">{character.gender}</h3>
-      <h3 id="characterDetails">{character.height}</h3>
-      <h3 id="characterDetails">{character.mass}</h3>
-      <h3 id="characterDetails">{character.hair_color}</h3>
-      {vehicles &&
-        vehicles.length > 0 &&
-        vehicles.map((vehicle, index) => (
+      <h1 id="characterDetails">Name: {character.name}</h1>
+      <h3 id="characterDetails">Birth year: {character.birth_year}</h3>
+      <h3 id="characterDetails">Gender: {character.gender}</h3>
+      <h3 id="characterDetails">Height: {character.height}</h3>
+      <h3 id="characterDetails">Mass: {character.mass}</h3>
+      <h3 id="characterDetails">Hair color: {character.hair_color}</h3>
+      {vehiclesArray &&
+        vehiclesArray.length > 0 &&
+        vehiclesArray.map((vehicle, index) => (
           <h1 key={index}>
             <Link
               to={`/Character/${match.params.id}/vehicle/${getLastNumber(

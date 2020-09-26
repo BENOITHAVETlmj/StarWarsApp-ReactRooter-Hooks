@@ -26,7 +26,6 @@ function Vehicle({ match }) {
     const item = await fetchVehicle.json();
     setVehicle(item);
     setIsLoading(false);
-    console.log(item);
   };
 
   //getting last number of the url link to get id matching params endpoint
