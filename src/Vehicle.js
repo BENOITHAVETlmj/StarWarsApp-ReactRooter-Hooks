@@ -3,6 +3,7 @@ import "./index.css";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
 import { Link } from "react-router-dom";
+import Name from "./CharacterName";
 
 function Vehicle({ match }) {
   const [vehicle, setVehicle] = useState();
@@ -37,7 +38,7 @@ function Vehicle({ match }) {
   return isLoading ? (
     <ClipLoader css={override} size={250} color={"yellow"} />
   ) : (
-    <div className="vehicule">
+    <div className="vehicle-card">
       <ul>
         <li>Name: {vehicle && vehicle.name}</li>
         <li>Created in: {vehicle && Date(vehicle.created)}</li>
@@ -48,7 +49,9 @@ function Vehicle({ match }) {
           {vehicle &&
             vehicle.pilots.map((pilot, index) => (
               <div key={index}>
-                <Link to={`/Character/${getLastNumber(pilot)}`}>{pilot}</Link>
+                <Link to={`/Character/${getLastNumber(pilot)}`}>
+                  <Name url={pilot} />
+                </Link>
               </div>
             ))}
         </li>

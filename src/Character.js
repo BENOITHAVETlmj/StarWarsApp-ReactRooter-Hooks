@@ -3,7 +3,7 @@ import "./index.css";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
 import { Link } from "react-router-dom";
-import VehiculeName from "./VehiculeName";
+import VehicleName from "./VehicleName";
 
 function Character({ match }) {
   const [character, setCharacter] = useState({ films: [], vehicles: [] });
@@ -57,7 +57,9 @@ function Character({ match }) {
                 vehicle
               )}`}
             >
-              {vehicle && <VehiculeName url={vehicle} />}
+              {vehicle && (
+                <VehicleName className="character-name" url={vehicle} />
+              )}
             </Link>
           </h1>
         ))}

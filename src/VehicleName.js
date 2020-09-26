@@ -4,7 +4,7 @@ import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
 
 function Vehicle({ url }) {
-  const [vehicle, setVehicle] = useState();
+  const [vehicle, setVehicle] = useState({ films: [], vehicles: [] });
   const [isLoading, setIsLoading] = useState(false);
 
   const override = css`
@@ -26,9 +26,9 @@ function Vehicle({ url }) {
   };
 
   return isLoading ? (
-    <ClipLoader css={override} size={250} color={"yellow"} />
+    <ClipLoader css={override} size={50} color={"yellow"} />
   ) : (
-    <div className="vehicule">Vehicule Name: {vehicle && vehicle.name}</div>
+    <div className="vehicle">Vehicle Name: {vehicle && vehicle.name}</div>
   );
 }
 
