@@ -45,7 +45,7 @@ function Vehicle({ match }) {
         <li>Model:{vehicle && vehicle.model}</li>
         <li>Manufacturer: {vehicle && vehicle.manufacturer}</li>
         <li>
-          Pilots:{" "}
+          Pilots:
           {vehicle &&
             vehicle.pilots.map((pilot, index) => (
               <div key={index}>
