@@ -1,11 +1,11 @@
 import React from "react";
 import "./index.css";
-import Nav from "./Nav";
-import Characters from "./Characters";
-import Home from "./Home";
-import About from "./About";
-import Character from "./Character";
-import Vehicle from "./Vehicle";
+import Nav from "./Component/Nav";
+import Characters from "./Component/Characters";
+import Home from "./Component/Home";
+import About from "./Component/About";
+import Character from "./Component/Character";
+import Vehicle from "./Component/Vehicle";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {

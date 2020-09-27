@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./index.css";
+import "../index.css";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
 import { Link } from "react-router-dom";

@@ -1,35 +1,34 @@
 import React, { useEffect, useState } from "react";
-import "./index.css";
+import "../index.css";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
 
-function Vehicle({ url }) {
-  const [vehicle, setVehicle] = useState({ films: [], vehicles: [] });
+function Name({ url }) {
+  const [character, setCharacter] = useState({ films: [], vehicles: [] });
   const [isLoading, setIsLoading] = useState(false);
-
   const override = css`
     display: block;
     margin: 20px auto;
   `;
 
   useEffect(() => {
-    fetchVehicle();
+    fetchCharacter();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const fetchVehicle = async () => {
+  const fetchCharacter = async () => {
     setIsLoading(true);
-    const fetchVehicle = await fetch(`${url}`);
-    const item = await fetchVehicle.json();
-    setVehicle(item);
+    const fetchCharacter = await fetch(`${url}`);
+    const item = await fetchCharacter.json();
+    setCharacter(item);
     setIsLoading(false);
   };
 
   return isLoading ? (
-    <ClipLoader css={override} size={50} color={"yellow"} />
+    <ClipLoader css={override} size={50} color={"black"} />
   ) : (
-    <div className="vehicle">Vehicle Name: {vehicle && vehicle.name}</div>
+    <h3 className="character-name">Name: {character.name}</h3>
   );
 }
 
-export default Vehicle;
+export default Name;
