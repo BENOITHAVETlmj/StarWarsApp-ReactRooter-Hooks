@@ -22,7 +22,7 @@ function Vehicle({ match }) {
   const fetchVehicle = async () => {
     setIsLoading(true);
     const fetchVehicle = await fetch(
-      `https://swapi.dev/api/vehicles/${match.params.id}`
+      `http://swapi.dev/api/vehicles/${match.params.id}`
     );
     const item = await fetchVehicle.json();
     setVehicle(item);

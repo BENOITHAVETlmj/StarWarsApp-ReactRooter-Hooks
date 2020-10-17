@@ -22,7 +22,7 @@ function Home() {
 
   const fetchItems = async () => {
     setIsLoading(true);
-    const data = await fetch("https://www.instagram.com/starwars/?__a=1");
+    const data = await fetch("http://www.instagram.com/starwars/?__a=1");
 
     const payloadInsta = await data.json();
     setPayloadInsta(payloadInsta.graphql.user);

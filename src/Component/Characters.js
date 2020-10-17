@@ -19,7 +19,7 @@ function Characters() {
 
   const fetchItems = async () => {
     setIsLoading(true);
-    const data = await fetch("https://swapi.dev/api/people");
+    const data = await fetch("http://swapi.dev/api/people");
 
     const characters = await data.json();
     setCharacters(characters.results);
