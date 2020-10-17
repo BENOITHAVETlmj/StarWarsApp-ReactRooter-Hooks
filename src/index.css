@@ -90,3 +90,20 @@ li {
   margin: 10px 80px;
   padding: 10px;
 }
+
+.home-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.home-header-img {
+  margin-right: 15px;
+  border: 1px solid yellow;
+}
+
+.home-thumbnail-img {
+  margin: 5px;
+  cursor: pointer;
+}
