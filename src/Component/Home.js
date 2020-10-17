@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
+import ClipLoader from "react-spinners/ClipLoader";
+import { css } from "@emotion/core";
+
+const override = css`
+  display: block;
+  margin: 20px auto;
+`;
 
 function Home() {
   const [payloadInsta, setPayloadInsta] = useState([]);
@@ -26,7 +33,7 @@ function Home() {
   return (
     <div>
       {isLoading ? (
-        <>...loading</>
+        <ClipLoader css={override} size={200} color={"yellow"} />
       ) : (
         <>
           <div className="home-header">
@@ -35,17 +42,24 @@ function Home() {
               src={payloadInsta.profile_pic_url}
               alt="profil_pic"
             />
-            <h2>{payloadInsta.biography}</h2>
+            <a
+              style={({ cursor: "pointer" }, { color: "yellow" })}
+              href="https://www.instagram.com/starwars/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h2>{payloadInsta.biography}</h2>
+            </a>
           </div>
           {thumbnails?.map((t, index) => (
             <a
-              href="https://www.instagram.com/starwars/?hl=en"
+              key={index}
+              href={t.node.display_url}
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
                 className="home-thumbnail-img"
-                key={index}
                 src={t.node.display_url}
                 alt={t.display_url}
                 width={300}

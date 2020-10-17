@@ -21,7 +21,7 @@ function Character({ match }) {
   const fetchCharacter = async () => {
     setIsLoading(true);
     const fetchCharacter = await fetch(
-      `http://swapi.dev/api/people/${match.params.id}`
+      `https://swapi.dev/api/people/${match.params.id}`
     );
     const item = await fetchCharacter.json();
     setCharacter(item);

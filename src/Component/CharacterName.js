@@ -25,7 +25,7 @@ function Name({ url }) {
   };
 
   return isLoading ? (
-    <ClipLoader css={override} size={50} color={"black"} />
+    <ClipLoader css={override} size={50} color={"yellow"} />
   ) : (
     <h3 className="character-name">Name: {character.name}</h3>
   );

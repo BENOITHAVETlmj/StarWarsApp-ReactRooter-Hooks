@@ -82,6 +82,17 @@ li {
   color: black;
 }
 
+.character-item-name {
+  color: yellow;
+  padding: 5px;
+}
+
+.character-item-name:hover {
+  color: black;
+  background-color: yellow;
+  border-radius: 5px;
+}
+
 .vehicle-card {
   border: 1px solid yellow;
   font-size: 20px;

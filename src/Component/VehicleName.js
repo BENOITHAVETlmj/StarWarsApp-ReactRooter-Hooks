@@ -6,7 +6,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 function Vehicle({ url }) {
   const [vehicle, setVehicle] = useState({ films: [], vehicles: [] });
   const [isLoading, setIsLoading] = useState(false);
-
+  console.log(url);
   const override = css`
     display: block;
     margin: 20px auto;
