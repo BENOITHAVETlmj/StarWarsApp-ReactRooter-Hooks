@@ -1,4 +1,4 @@
-LINKS for testing the App  ---->    http://starwars-app-benoit-havet.herokuapp.com/home
+LINKS for testing the App  ---->    http://starwars-app-benoit-havet.herokuapp.com/
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
