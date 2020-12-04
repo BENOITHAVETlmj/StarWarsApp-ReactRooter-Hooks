@@ -32,6 +32,13 @@ nav {
   min-width: 10vh;
 }
 
+.logo:hover {
+  cursor: pointer;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+}
+
 .nav-links {
   display: flex;
   align-items: center;

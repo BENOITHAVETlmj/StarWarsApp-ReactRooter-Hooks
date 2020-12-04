@@ -21,7 +21,7 @@ function App() {
         <Nav />
         <React.Suspense fallback={<ClipLoader css={override} size={350} color={"yellow"} />}>
         <Switch>
-          <Route path="/Home" exact component={Home} />
+          <Route path="/" exact component={Home} />
           <Route path="/About" component={About} />
           <Route path="/Characters" exact component={Characters} />
           <Route path="/Character/:id" exact component={Character} />
