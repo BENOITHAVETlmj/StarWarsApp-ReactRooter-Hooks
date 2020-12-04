@@ -15,6 +15,7 @@ function App() {
   display: block;
   margin: 20px auto;
 `;
+
   return (
     <Router>
       <div className="App">

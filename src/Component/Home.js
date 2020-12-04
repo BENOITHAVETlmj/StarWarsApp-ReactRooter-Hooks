@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
+import { css } from "@emotion/core";
+import ClipLoader from "react-spinners/ClipLoader";
+
+ const override = css`
+  display: block;
+  margin: 20px auto;
+`;
 
 function Home() {
   const [payloadInsta, setPayloadInsta] = useState([]);
   const [thumbnails, setThumbnails] = useState([
     { node: { dimensions: {}, display_url: {} } },
   ]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchItems();
@@ -13,16 +21,20 @@ function Home() {
   }, []);
 
   const fetchItems = async () => {
+    setLoading(true)
     const data = await fetch("https://www.instagram.com/starwars/?__a=1");
+    // console.log("toto");
     const payloadInsta = await data.json();
+    setLoading(false);
     setPayloadInsta(payloadInsta.graphql.user);
     setThumbnails(payloadInsta.graphql.user.edge_owner_to_timeline_media.edges);
   };
 
   return (
     <div>
-      {<>
-          <div className="home-header">
+    {loading ? <ClipLoader css={override} size={350} color={"yellow"} />: 
+      <>
+        <div className="home-header">
             <img
               className="home-header-img"
               src={payloadInsta.profile_pic_url}
