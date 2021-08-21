@@ -3,7 +3,7 @@ import "../index.css";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
 
- const override = css`
+const override = css`
   display: block;
   margin: 20px auto;
 `;
@@ -17,14 +17,13 @@ function Home() {
 
   useEffect(() => {
     fetchItems();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchItems = async () => {
-    setLoading(true)
+    setLoading(true);
     const data = await fetch("https://www.instagram.com/starwars/?__a=1");
-    // console.log("toto");
     const payloadInsta = await data.json();
+    console.log(payloadInsta);
     setLoading(false);
     setPayloadInsta(payloadInsta.graphql.user);
     setThumbnails(payloadInsta.graphql.user.edge_owner_to_timeline_media.edges);
@@ -32,16 +31,18 @@ function Home() {
 
   return (
     <div>
-    {loading ? <ClipLoader css={override} size={350} color={"yellow"} />: 
-      <>
-        <div className="home-header">
+      {loading ? (
+        <ClipLoader css={override} size={350} color={"yellow"} />
+      ) : (
+        <>
+          <div className="home-header">
             <img
               className="home-header-img"
               src={payloadInsta.profile_pic_url}
               alt="profil_pic"
             />
             <a
-              style={({ cursor: "pointer" }, { color: "yellow" })}
+              style={{ cursor: "pointer", color: "yellow" }}
               href="https://www.instagram.com/starwars/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
@@ -66,7 +67,7 @@ function Home() {
             </a>
           ))}
         </>
-      }
+      )}
     </div>
   );
 }
