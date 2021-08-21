@@ -48,8 +48,7 @@ function Character({ match }) {
       <h3 id="characterDetails">Height: {character.height}</h3>
       <h3 id="characterDetails">Mass: {character.mass}</h3>
       <h3 id="characterDetails">Hair color: {character.hair_color}</h3>
-      {vehiclesArray &&
-        vehiclesArray.length > 0 &&
+      {vehiclesArray && vehiclesArray.length > 0 ? (
         vehiclesArray.map((vehicle, index) => (
           <h1 key={index}>
             <Link
@@ -58,11 +57,20 @@ function Character({ match }) {
               )}`}
             >
               {vehicle && (
-                <VehicleName className="character-name" url={vehicle} />
+                <VehicleName
+                  className="character-name"
+                  url={vehicle}
+                  isLoading={isLoading}
+                />
               )}
             </Link>
           </h1>
-        ))}
+        ))
+      ) : (
+        <Link to={`/Characters`} className="vehicle">
+          Going back to Characters page
+        </Link>
+      )}
     </div>
   );
 }

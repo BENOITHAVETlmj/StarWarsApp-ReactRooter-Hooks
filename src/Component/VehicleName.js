@@ -14,9 +14,9 @@ function Vehicle({ url }) {
     setVehicle(item);
   };
 
-  return (
+  return vehicle ? (
     <div className="vehicle">Vehicle Name: {vehicle && vehicle.name}</div>
-  );
+  ) : null;
 }
 
 export default Vehicle;

@@ -20,13 +20,13 @@ function Home() {
           marginLeft: "auto",
           marginTop: "100px",
         }}
-        playing="true"
-        controls="true"
+        playing={true}
+        controls={true}
       />
       <p>
         Si votre navigateur ne prend pas en charge les vidéos HTML5. Voici{" "}
         <a href={video1} rel="noopener noreferrer">
-          un lien pour télécharger la vidéo
+          un lien pour visionner la vidéo
         </a>
         .
       </p>
