@@ -1,8 +1,20 @@
-This application's purpose is to use REACT router with Starwars API.
+This application's purpose is to use react-router-dom with Starwars API.
 
 this a link to have a look in your browser: http://starwars-app-benoit-havet.herokuapp.com/
 
 ![](/src/starWarsPoster.png)
+
+## REACT ROUTER
+
+https://reactrouter.com/web/guides/quick-start
+
+## react-player
+
+https://www.npmjs.com/package/react-player
+
+## STARWARS API
+
+https://swapi.dev/
 
 ## Available Scripts
 
