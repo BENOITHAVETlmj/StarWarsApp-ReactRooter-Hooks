@@ -4,15 +4,15 @@ this a link to have a look in your browser: http://starwars-app-benoit-havet.her
 
 ![](/src/starWarsPoster.png)
 
-## REACT ROUTER
+# REACT ROUTER
 
 https://reactrouter.com/web/guides/quick-start
 
-## react-player
+# react-player
 
 https://www.npmjs.com/package/react-player
 
-## STARWARS API
+# STARWARS API
 
 https://swapi.dev/
 
