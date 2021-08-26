@@ -2,7 +2,7 @@ This application's purpose is to use REACT router with Starwars API.
 
 this a link to have a look in your browser: http://starwars-app-benoit-havet.herokuapp.com/
 
-![](/Users/benoithavet 1/Desktop/StarWarsApp-ReactRooter-Hooks/src/starWarsPoster.png)
+![](/src/starWarsPoster.png)
 
 ## Available Scripts
 
