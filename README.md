@@ -8,11 +8,9 @@ this a link to have a look in your browser: http://starwars-app-benoit-havet.her
 
 https://reactrouter.com/web/guides/quick-start
 
-![Route]
-(src/react-router.png)
+![Route] (src/react-router.png)
 
-![Link]
-(src/react-router-link.png)
+![Link] (src/react-router-link.png)
 
 # react-player
 
