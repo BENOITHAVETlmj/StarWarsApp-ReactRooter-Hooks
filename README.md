@@ -10,7 +10,7 @@ https://reactrouter.com/web/guides/quick-start
 
 ![] (/src/react-router.png)
 
-![] (/src/react-router-link.png)
+![] (/src/starWarsPoster.png)
 
 # react-player
 
