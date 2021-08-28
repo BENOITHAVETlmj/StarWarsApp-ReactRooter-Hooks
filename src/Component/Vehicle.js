@@ -29,7 +29,10 @@ function Vehicle({ match }) {
     <div className="vehicle-card">
       <ul>
         <li>Name: {vehicle && vehicle.name}</li>
-        <li>Created in: {vehicle && Date(vehicle.created)}</li>
+        <li>
+          Created in:{" "}
+          {vehicle && new Date(vehicle.created).toLocaleString("en-US")}
+        </li>
         <li>Model:{vehicle && vehicle.model}</li>
         <li>Manufacturer: {vehicle && vehicle.manufacturer}</li>
         <li>
