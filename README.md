@@ -1,5 +1,7 @@
 This application's purpose is to use react-router-dom with Starwars API.
 
+It does render dynamically Url to fetch the right data when clicking on a character to show his vehicles and update the url, once you click on vehicle, it redirects you back to the owners of this type of vehicles...and so on
+
 this a link to have a look in your browser: http://starwars-app-benoit-havet.herokuapp.com/
 
 ![](/src/starWarsPoster.png)
