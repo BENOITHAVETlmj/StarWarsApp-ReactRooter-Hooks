@@ -12,6 +12,18 @@ https://reactrouter.com/web/guides/quick-start
 
 ![](/src/react-router-link.png)
 
+
+# Lazy loading React components
+
+React.lazy() makes it easy to create components that are loaded using dynamic import() but rendered like regular components. This automatically causes the bundle containing the component to load when the component is rendered.
+
+React.lazy() takes as its argument a function that must return a promise by calling import() to load the component. The returned promise resolves to a module with a default export containing the React component
+
+```
+const Characters = React.lazy(() => import("./Component/Characters"));
+const About = React.lazy(() => import("./Component/About"));
+```
+
 # react-player
 
 A React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo...
