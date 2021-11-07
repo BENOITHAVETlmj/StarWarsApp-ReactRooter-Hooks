@@ -14,6 +14,8 @@ https://reactrouter.com/web/guides/quick-start
 
 # react-player
 
+A React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo...
+
 https://www.npmjs.com/package/react-player
 
 # STARWARS API
