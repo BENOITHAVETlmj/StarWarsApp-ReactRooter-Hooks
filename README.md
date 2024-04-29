@@ -6,7 +6,7 @@ It does render dynamically Url to fetch the right data when clicking on a charac
 
 # REACT ROUTER
 
-https://reactrouter.com/web/guides/quick-start
+[https://reactrouter.com/web/guides/quick-start](https://reactrouter.com/en/6.23.0/start/overview)
 
 ![](/src/react-router.png)
 
